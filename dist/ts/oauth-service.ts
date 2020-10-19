@@ -102,7 +102,7 @@ export class OAuthService {
     public loginOnStateChange = (toState): boolean => {
         if (toState && this.isLoginRequired(toState) && !this.isAuthenticated() && !this.getTokenDataFromUrl()) {
 
-            if (this.localStorageService.isStorageSupported()) {
+            if (this.localStorageService.isStorageSupported() && !this.localStorageService.get<string>(OAUTH_STARTPAGE_STORAGE_KEY)) {
                 let url = window.location.href;
 
                 if (!window.location.hash) {
