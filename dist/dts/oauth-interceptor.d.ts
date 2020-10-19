@@ -7,5 +7,5 @@ export default class OAuthInterceptor {
     request: (config: any) => any;
     response: (response: any, request?: any) => any;
     responseError: (response: any, request?: any) => any;
-    private handleRequestError(response, requestMessage?);
+    private handleRequestError;
 }

@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 define(["require", "exports", "aurelia-dependency-injection", "./oauth-service"], function (require, exports, aurelia_dependency_injection_1, oauth_service_1) {
     "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
     var OAuthAuthorizeStep = (function () {
         function OAuthAuthorizeStep(oauthService) {
             this.oauthService = oauthService;
@@ -20,13 +21,13 @@ define(["require", "exports", "aurelia-dependency-injection", "./oauth-service"]
             }
             return next();
         };
+        OAuthAuthorizeStep = __decorate([
+            aurelia_dependency_injection_1.autoinject(),
+            __metadata("design:paramtypes", [oauth_service_1.OAuthService])
+        ], OAuthAuthorizeStep);
         return OAuthAuthorizeStep;
     }());
-    OAuthAuthorizeStep = __decorate([
-        aurelia_dependency_injection_1.autoinject(),
-        __metadata("design:paramtypes", [oauth_service_1.OAuthService])
-    ], OAuthAuthorizeStep);
     exports.OAuthAuthorizeStep = OAuthAuthorizeStep;
 });
 
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9vYXV0aC1hdXRob3JpemUtc3RlcC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztJQU1BLElBQWEsa0JBQWtCO1FBQzdCLDRCQUFvQixZQUEwQjtZQUExQixpQkFBWSxHQUFaLFlBQVksQ0FBYztRQUFJLENBQUM7UUFFbkQsZ0NBQUcsR0FBSCxVQUFJLGNBQWMsRUFBRSxJQUFVO1lBQzVCLElBQUksT0FBTyxHQUFHLGNBQWMsQ0FBQyxNQUFNLENBQUM7WUFFcEMsRUFBRSxDQUFDLENBQUMsSUFBSSxDQUFDLFlBQVksQ0FBQyxrQkFBa0IsQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDLENBQUM7Z0JBQ2xELE1BQU0sQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLFVBQVUsQ0FBQyxDQUFDO1lBQ25DLENBQUM7WUFFRCxNQUFNLENBQUMsSUFBSSxFQUFFLENBQUM7UUFDaEIsQ0FBQztRQUNILHlCQUFDO0lBQUQsQ0FaQSxBQVlDLElBQUE7SUFaWSxrQkFBa0I7UUFEOUIseUNBQVUsRUFBRTt5Q0FFdUIsNEJBQVk7T0FEbkMsa0JBQWtCLENBWTlCO0lBWlksZ0RBQWtCIiwiZmlsZSI6Im9hdXRoLWF1dGhvcml6ZS1zdGVwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmV4dCB9IGZyb20gJ2F1cmVsaWEtcm91dGVyJztcclxuaW1wb3J0IHsgYXV0b2luamVjdCB9IGZyb20gJ2F1cmVsaWEtZGVwZW5kZW5jeS1pbmplY3Rpb24nO1xyXG5cclxuaW1wb3J0IHsgT0F1dGhTZXJ2aWNlIH0gZnJvbSAnLi9vYXV0aC1zZXJ2aWNlJztcclxuXHJcbkBhdXRvaW5qZWN0KClcclxuZXhwb3J0IGNsYXNzIE9BdXRoQXV0aG9yaXplU3RlcCB7XHJcbiAgY29uc3RydWN0b3IocHJpdmF0ZSBvYXV0aFNlcnZpY2U6IE9BdXRoU2VydmljZSkgeyB9XHJcblxyXG4gIHJ1bihyb3V0aW5nQ29udGV4dCwgbmV4dDogTmV4dCkge1xyXG4gICAgbGV0IHRvU3RhdGUgPSByb3V0aW5nQ29udGV4dC5jb25maWc7XHJcblxyXG4gICAgaWYgKHRoaXMub2F1dGhTZXJ2aWNlLmxvZ2luT25TdGF0ZUNoYW5nZSh0b1N0YXRlKSkge1xyXG4gICAgICByZXR1cm4gbmV4dC5jb21wbGV0ZSgnUmVkaXJlY3QnKTtcclxuICAgIH1cclxuXHJcbiAgICByZXR1cm4gbmV4dCgpO1xyXG4gIH1cclxufSJdfQ==
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9vYXV0aC1hdXRob3JpemUtc3RlcC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7SUFNQTtRQUNFLDRCQUFvQixZQUEwQjtZQUExQixpQkFBWSxHQUFaLFlBQVksQ0FBYztRQUFJLENBQUM7UUFFbkQsZ0NBQUcsR0FBSCxVQUFJLGNBQWMsRUFBRSxJQUFVO1lBQzVCLElBQUksT0FBTyxHQUFHLGNBQWMsQ0FBQyxNQUFNLENBQUM7WUFFcEMsSUFBSSxJQUFJLENBQUMsWUFBWSxDQUFDLGtCQUFrQixDQUFDLE9BQU8sQ0FBQyxFQUFFO2dCQUNqRCxPQUFPLElBQUksQ0FBQyxRQUFRLENBQUMsVUFBVSxDQUFDLENBQUM7YUFDbEM7WUFFRCxPQUFPLElBQUksRUFBRSxDQUFDO1FBQ2hCLENBQUM7UUFYVSxrQkFBa0I7WUFEOUIseUNBQVUsRUFBRTs2Q0FFdUIsNEJBQVk7V0FEbkMsa0JBQWtCLENBWTlCO1FBQUQseUJBQUM7S0FaRCxBQVlDLElBQUE7SUFaWSxnREFBa0IiLCJmaWxlIjoib2F1dGgtYXV0aG9yaXplLXN0ZXAuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBOZXh0IH0gZnJvbSAnYXVyZWxpYS1yb3V0ZXInO1xyXG5pbXBvcnQgeyBhdXRvaW5qZWN0IH0gZnJvbSAnYXVyZWxpYS1kZXBlbmRlbmN5LWluamVjdGlvbic7XHJcblxyXG5pbXBvcnQgeyBPQXV0aFNlcnZpY2UgfSBmcm9tICcuL29hdXRoLXNlcnZpY2UnO1xyXG5cclxuQGF1dG9pbmplY3QoKVxyXG5leHBvcnQgY2xhc3MgT0F1dGhBdXRob3JpemVTdGVwIHtcclxuICBjb25zdHJ1Y3Rvcihwcml2YXRlIG9hdXRoU2VydmljZTogT0F1dGhTZXJ2aWNlKSB7IH1cclxuXHJcbiAgcnVuKHJvdXRpbmdDb250ZXh0LCBuZXh0OiBOZXh0KSB7XHJcbiAgICBsZXQgdG9TdGF0ZSA9IHJvdXRpbmdDb250ZXh0LmNvbmZpZztcclxuXHJcbiAgICBpZiAodGhpcy5vYXV0aFNlcnZpY2UubG9naW5PblN0YXRlQ2hhbmdlKHRvU3RhdGUpKSB7XHJcbiAgICAgIHJldHVybiBuZXh0LmNvbXBsZXRlKCdSZWRpcmVjdCcpO1xyXG4gICAgfVxyXG5cclxuICAgIHJldHVybiBuZXh0KCk7XHJcbiAgfVxyXG59Il19

@@ -33,6 +33,6 @@ export declare class OAuthService {
     private getTokenDataFromUrl;
     private getBaseRouteUrl;
     private getSimpleNonceValue;
-    private getRedirectUrl();
-    private setAutomaticTokenRenewal();
+    private getRedirectUrl;
+    private setAutomaticTokenRenewal;
 }

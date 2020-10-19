@@ -1,6 +1,6 @@
 {
   "name": "aurelia-oauth",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "Plugin for authentication using OAuth2 and JWT security tokens such as Azure Active Directory or GoogleApi",
   "keywords": [
     "aurelia",
@@ -21,7 +21,12 @@
     "type": "git",
     "url": "https://github.com/matik12/aurelia-oauth.git"
   },
-  "scripts": {},
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
+  },
   "jspm": {
     "registry": "npm",
     "main": "aurelia-oauth",
