@@ -3,10 +3,6 @@ export default class LocalStorageService {
         return window.localStorage !== undefined;
     }
 
-    private makeKey(key: string): string{
-        return `${window.location.pathname}/${key}`;
-    }
-
     public set<T>(key: string, object: T): void {
         window.localStorage.setItem(this.makeKey(key), JSON.stringify(object));
     }
@@ -17,5 +13,9 @@ export default class LocalStorageService {
 
     public remove(key: string): void {
         window.localStorage.removeItem(this.makeKey(key));
+    }
+
+    private makeKey(key: string): string {
+        return `${window.location.pathname}/${key}`;
     }
 }

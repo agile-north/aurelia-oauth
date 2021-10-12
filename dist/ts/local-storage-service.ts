@@ -4,14 +4,18 @@ export default class LocalStorageService {
     }
 
     public set<T>(key: string, object: T): void {
-        window.localStorage.setItem(key, JSON.stringify(object));
+        window.localStorage.setItem(this.makeKey(key), JSON.stringify(object));
     }
 
     public get<T>(key: string): T {
-        return JSON.parse(window.localStorage.getItem(key));
+        return JSON.parse(window.localStorage.getItem(this.makeKey(key)));
     }
 
     public remove(key: string): void {
-        window.localStorage.removeItem(key);
+        window.localStorage.removeItem(this.makeKey(key));
+    }
+
+    private makeKey(key: string): string {
+        return `${window.location.pathname}/${key}`;
     }
 }
