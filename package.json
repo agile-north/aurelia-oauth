@@ -21,7 +21,9 @@
     "type": "git",
     "url": "https://github.com/matik12/aurelia-oauth.git"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "npm install & jspm install & typings install & gulp build"
+  },
   "jspm": {
     "registry": "npm",
     "main": "aurelia-oauth",

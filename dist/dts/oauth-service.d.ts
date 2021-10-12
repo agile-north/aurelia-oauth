@@ -12,6 +12,7 @@ export interface OAuthConfig {
     redirectUri?: string;
     alwaysRequireLogin?: boolean;
     autoTokenRenewal?: boolean;
+    baseRouteUrl: string;
 }
 export declare class OAuthService {
     private oAuthTokenService;

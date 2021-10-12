@@ -18,6 +18,7 @@ export interface OAuthConfig {
     redirectUri?: string;
     alwaysRequireLogin?: boolean;
     autoTokenRenewal?: boolean;
+    baseRouteUrl: string;
 }
 
 @autoinject()
@@ -44,7 +45,8 @@ export class OAuthService {
             scope: null,
             state: null,
             alwaysRequireLogin: false,
-            autoTokenRenewal: true
+            autoTokenRenewal: true,
+            baseRouteUrl:null
         };
     }
 
@@ -79,6 +81,7 @@ export class OAuthService {
         }
 
         this.config.redirectUri = config.redirectUri || pathDefault;
+        this.config.baseRouteUrl = config.baseRouteUrl || window.location.origin + window.location.pathname + '#/';
 
         return config;
     };
@@ -156,7 +159,7 @@ export class OAuthService {
     };
 
     private getBaseRouteUrl = (): string => {
-        return window.location.origin + '/#/';
+        return this.config.baseRouteUrl;
     }
 
     private getSimpleNonceValue = (): string => {

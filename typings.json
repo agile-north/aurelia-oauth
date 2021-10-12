@@ -12,7 +12,7 @@
 		"aurelia-loader": "github:aurelia/loader",
 		"aurelia-logging": "github:aurelia/logging",
 		"aurelia-logging-console": "github:aurelia/logging-console",
-		"aurelia-metadata": "github:aurelia/metadata",
+		"aurelia-metadata": "github:aurelia/metadata#aec3d1f20c72c7f2bde8f34c1e4818244486c024",
 		"aurelia-pal": "github:aurelia/pal",
 		"aurelia-pal-browser": "github:aurelia/pal-browser",
 		"aurelia-path": "github:aurelia/path",
