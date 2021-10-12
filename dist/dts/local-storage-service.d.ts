@@ -3,4 +3,5 @@ export default class LocalStorageService {
     set<T>(key: string, object: T): void;
     get<T>(key: string): T;
     remove(key: string): void;
+    private makeKey;
 }
