@@ -81,7 +81,7 @@ export class OAuthService {
         }
 
         this.config.redirectUri = config.redirectUri || pathDefault;
-        this.config.baseRouteUrl = config.baseRouteUrl || window.location.origin + window.location.pathname + '/#/';
+        this.config.baseRouteUrl = config.baseRouteUrl || window.location.origin + window.location.pathname + '#/';
 
         return config;
     };
