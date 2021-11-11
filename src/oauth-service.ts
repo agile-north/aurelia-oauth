@@ -1,10 +1,11 @@
-import { EventAggregator } from 'aurelia-event-aggregator';
-import { autoinject } from 'aurelia-dependency-injection';
+// @ts-ignore
+import {EventAggregator} from 'aurelia-event-aggregator';
+import {autoinject} from 'aurelia-dependency-injection';
 
-import { OAuthTokenService, OAuthTokenData } from './oauth-token-service';
+import {OAuthTokenData, OAuthTokenService} from './oauth-token-service';
 import UrlHashService from './url-hash-service';
 import LocalStorageService from './local-storage-service';
-import { objectAssign } from './oauth-polyfills';
+import {objectAssign} from './oauth-polyfills';
 
 const OAUTH_STARTPAGE_STORAGE_KEY: string = 'oauth.startPage';
 
@@ -26,10 +27,15 @@ export class OAuthService {
 
     public config: OAuthConfig;
 
-    private defaults: OAuthConfig;
+    private readonly defaults: OAuthConfig;
 
-    public static get LOGIN_SUCCESS_EVENT(): string { return 'oauth:loginSuccess'; }
-    public static get INVALID_TOKEN_EVENT(): string { return 'oauth:invalidToken'; }
+    public static get LOGIN_SUCCESS_EVENT(): string {
+        return 'oauth:loginSuccess';
+    }
+
+    public static get INVALID_TOKEN_EVENT(): string {
+        return 'oauth:invalidToken';
+    }
 
     constructor(
         private oAuthTokenService: OAuthTokenService,
@@ -46,7 +52,7 @@ export class OAuthService {
             state: null,
             alwaysRequireLogin: false,
             autoTokenRenewal: true,
-            baseRouteUrl:null
+            baseRouteUrl: null
         };
     }
 
@@ -95,17 +101,15 @@ export class OAuthService {
     };
 
     public logout = (): void => {
-        const redirectUrl = `${this.config.logoutUrl}?` +
+        window.location.href = `${this.config.logoutUrl}?` +
             `${this.config.logoutRedirectParameterName}=${encodeURIComponent(this.config.redirectUri)}`;
-
-        window.location.href = redirectUrl;
         this.oAuthTokenService.removeToken();
     };
 
     public loginOnStateChange = (toState): boolean => {
         if (toState && this.isLoginRequired(toState) && !this.isAuthenticated() && !this.getTokenDataFromUrl()) {
             if (this.localStorageService.isStorageSupported()) {
-                if(this.localStorageService.get<string>(OAUTH_STARTPAGE_STORAGE_KEY) == null) {
+                if (this.localStorageService.get<string>(OAUTH_STARTPAGE_STORAGE_KEY) == null) {
                     let url = window.location.href;
                     if (!window.location.hash) {
                         url = this.getBaseRouteUrl();
@@ -125,22 +129,19 @@ export class OAuthService {
 
         if (!this.isAuthenticated() && tokenData) {
             this.oAuthTokenService.setToken(tokenData);
-
+            let _ = this.getBaseRouteUrl();
             if (this.localStorageService.isStorageSupported()) {
                 const startPage = this.localStorageService.get<string>(OAUTH_STARTPAGE_STORAGE_KEY);
-
                 this.localStorageService.remove(OAUTH_STARTPAGE_STORAGE_KEY);
-                window.location.href = startPage;
-            } else {
-                // Redirect to the base application route
-                window.location.href = this.getBaseRouteUrl();
+                if (startPage) {
+                    _ = startPage;
+                }
             }
-
             this.eventAggregator.publish(OAuthService.LOGIN_SUCCESS_EVENT, tokenData);
-
             if (this.config.autoTokenRenewal) {
                 this.setAutomaticTokenRenewal();
             }
+            window.location.href = _;
         }
     };
 
@@ -160,11 +161,11 @@ export class OAuthService {
 
     private getBaseRouteUrl = (): string => {
         return this.config.baseRouteUrl;
-    }
+    };
 
     private getSimpleNonceValue = (): string => {
         return ((Date.now() + Math.random()) * Math.random()).toString().replace('.', '');
-    }
+    };
 
     private getRedirectUrl() {
         let redirectUrl = `${this.config.loginUrl}?` +

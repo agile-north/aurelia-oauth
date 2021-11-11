@@ -20,7 +20,7 @@ export declare class OAuthService {
     private localStorageService;
     private eventAggregator;
     config: OAuthConfig;
-    private defaults;
+    private readonly defaults;
     static readonly LOGIN_SUCCESS_EVENT: string;
     static readonly INVALID_TOKEN_EVENT: string;
     constructor(oAuthTokenService: OAuthTokenService, urlHashService: UrlHashService, localStorageService: LocalStorageService, eventAggregator: EventAggregator);
