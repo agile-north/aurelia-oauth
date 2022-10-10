@@ -1,7 +1,7 @@
-import { EventAggregator } from "aurelia-event-aggregator";
-import { OAuthTokenService } from "./oauth-token-service";
-import UrlHashService from "./url-hash-service";
-import LocalStorageService from "./local-storage-service";
+import { EventAggregator } from 'aurelia-event-aggregator';
+import { OAuthTokenService } from './oauth-token-service';
+import UrlHashService from './url-hash-service';
+import LocalStorageService from './local-storage-service';
 export interface OAuthConfig {
     loginUrl: string;
     logoutUrl: string;
@@ -10,7 +10,6 @@ export interface OAuthConfig {
     scope?: string;
     state?: string;
     redirectUri?: string;
-    redirectUriRemoveHash?: boolean;
     alwaysRequireLogin?: boolean;
     autoTokenRenewal?: boolean;
     baseRouteUrl: string;
