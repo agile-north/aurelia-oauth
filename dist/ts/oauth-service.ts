@@ -109,13 +109,13 @@ export class OAuthService {
     public loginOnStateChange = (toState): boolean => {
         if (toState && this.isLoginRequired(toState) && !this.isAuthenticated() && !this.getTokenDataFromUrl()) {
             if (this.localStorageService.isStorageSupported()) {
-                if (this.localStorageService.get<string>(OAUTH_STARTPAGE_STORAGE_KEY) == null) {
+                // if (this.localStorageService.get<string>(OAUTH_STARTPAGE_STORAGE_KEY) == null) {
                     let url = window.location.href;
                     if (!window.location.hash) {
                         url = this.getBaseRouteUrl();
                     }
                     this.localStorageService.set<string>(OAUTH_STARTPAGE_STORAGE_KEY, url);
-                }
+                // }
             }
             this.login();
             return true;
